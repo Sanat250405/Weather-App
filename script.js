@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const humidityEl = document.getElementById('humidity');
     const windSpeedEl = document.getElementById('wind-speed');
 
-    const apiKey = "ef7a2d5be24db6c47632bfdf82407c7a";
+    const apiKey = ENV_API_KEY;
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
     
     const iconMap = {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const getWeatherData = async (city) => {
-        if (!apiKey || apiKey !== "ef7a2d5be24db6c47632bfdf82407c7a") {
+        if (!apiKey || apiKey !== ENV_API_KEY) {
             showError("Please paste your API key in script.js");
             return;
         }
